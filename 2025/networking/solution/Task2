@@ -1,0 +1,355 @@
+Here's a complete **README.md / GitHub article** that you can directly upload to your **90DaysOfDevOps** repository.
+
+---
+
+# Protocols and Ports for DevOps
+
+## Introduction
+
+In DevOps, servers, applications, cloud services, and CI/CD pipelines communicate using different network protocols. Understanding these protocols and their default port numbers is essential for deploying applications, configuring firewalls, troubleshooting connectivity, and securing infrastructure.
+
+---
+
+# Common DevOps Protocols and Ports
+
+| Protocol         | Port    | Transport Protocol | Purpose                               | DevOps Use Case                                 |
+| ---------------- | ------- | ------------------ | ------------------------------------- | ----------------------------------------------- |
+| HTTP             | 80      | TCP                | Transfers web pages                   | Access web applications                         |
+| HTTPS            | 443     | TCP                | Secure web communication              | Secure websites and APIs                        |
+| SSH              | 22      | TCP                | Secure remote login                   | Connect to Linux servers and EC2 instances      |
+| FTP              | 21      | TCP                | File transfer                         | Upload and download files                       |
+| SFTP             | 22      | TCP                | Secure file transfer over SSH         | Secure deployment of application files          |
+| DNS              | 53      | UDP/TCP            | Resolves domain names to IP addresses | Access websites and cloud services              |
+| SMTP             | 25, 587 | TCP                | Send emails                           | Application email notifications                 |
+| POP3             | 110     | TCP                | Receive emails                        | Email clients                                   |
+| IMAP             | 143     | TCP                | Synchronize emails                    | Mail servers                                    |
+| DHCP             | 67, 68  | UDP                | Automatically assigns IP addresses    | Network configuration                           |
+| Telnet           | 23      | TCP                | Remote login (not secure)             | Legacy systems                                  |
+| NTP              | 123     | UDP                | Synchronizes system time              | Keep servers synchronized                       |
+| LDAP             | 389     | TCP/UDP            | Directory services                    | User authentication                             |
+| LDAPS            | 636     | TCP                | Secure LDAP                           | Secure directory services                       |
+| MySQL            | 3306    | TCP                | MySQL database connection             | Backend databases                               |
+| PostgreSQL       | 5432    | TCP                | PostgreSQL database connection        | Application databases                           |
+| MongoDB          | 27017   | TCP                | MongoDB database                      | NoSQL applications                              |
+| Redis            | 6379    | TCP                | In-memory cache                       | Application caching                             |
+| Kubernetes API   | 6443    | TCP                | Kubernetes cluster management         | Manage Kubernetes clusters                      |
+| Docker API       | 2375    | TCP                | Docker daemon (insecure)              | Docker management                               |
+| Docker API (TLS) | 2376    | TCP                | Secure Docker daemon                  | Secure Docker communication                     |
+| Jenkins          | 8080    | TCP                | CI/CD server                          | Build and deployment automation                 |
+| Git              | 9418    | TCP                | Git protocol                          | Clone repositories (less common than HTTPS/SSH) |
+
+---
+
+# Detailed Explanation of Important Protocols
+
+## 1. HTTP (HyperText Transfer Protocol)
+
+**Default Port:** `80`
+
+HTTP is used to transfer web pages between clients and web servers.
+
+### Example
+
+```
+Browser → Web Server
+```
+
+DevOps engineers use HTTP to:
+
+* Test deployed applications
+* Verify APIs
+* Access internal dashboards
+
+Example:
+
+```bash
+curl http://example.com
+```
+
+---
+
+## 2. HTTPS (HyperText Transfer Protocol Secure)
+
+**Default Port:** `443`
+
+HTTPS is the secure version of HTTP. It encrypts communication using SSL/TLS.
+
+### DevOps Relevance
+
+* Secure websites
+* REST APIs
+* AWS Load Balancers
+* Nginx and Apache servers
+* Kubernetes Ingress
+
+Example:
+
+```bash
+curl https://example.com
+```
+
+---
+
+## 3. SSH (Secure Shell)
+
+**Default Port:** `22`
+
+SSH provides secure remote access to Linux servers.
+
+### DevOps Relevance
+
+* Connect to EC2 instances
+* Manage Linux servers
+* Deploy applications
+* Configure cloud infrastructure
+* Git authentication
+
+Example:
+
+```bash
+ssh ubuntu@<server-ip>
+```
+
+---
+
+## 4. FTP (File Transfer Protocol)
+
+**Default Port:** `21`
+
+FTP transfers files between computers but does not encrypt data.
+
+### DevOps Relevance
+
+* Legacy application deployment
+* File sharing
+
+Example:
+
+```bash
+ftp server-ip
+```
+
+---
+
+## 5. SFTP (SSH File Transfer Protocol)
+
+**Default Port:** `22`
+
+SFTP securely transfers files using SSH.
+
+### DevOps Relevance
+
+* Secure deployment
+* Backup files
+* Transfer configuration files
+
+Example:
+
+```bash
+sftp ubuntu@server-ip
+```
+
+---
+
+## 6. DNS (Domain Name System)
+
+**Default Port:** `53`
+
+DNS converts domain names into IP addresses.
+
+Example:
+
+```
+google.com
+↓
+
+142.250.xx.xx
+```
+
+### DevOps Relevance
+
+* Route53
+* Kubernetes Services
+* Cloud networking
+* Load Balancers
+
+Example:
+
+```bash
+nslookup github.com
+```
+
+or
+
+```bash
+dig github.com
+```
+
+---
+
+## 7. SMTP (Simple Mail Transfer Protocol)
+
+**Ports:** `25`, `587`
+
+SMTP sends emails.
+
+### DevOps Relevance
+
+* Jenkins notifications
+* Application alerts
+* Monitoring systems
+
+---
+
+## 8. MySQL
+
+**Default Port:** `3306`
+
+MySQL is one of the most widely used relational databases.
+
+### DevOps Relevance
+
+* Backend applications
+* RDS MySQL
+* Docker containers
+
+Example:
+
+```bash
+mysql -u root -p
+```
+
+---
+
+## 9. PostgreSQL
+
+**Default Port:** `5432`
+
+Popular relational database.
+
+### DevOps Relevance
+
+* Django
+* Spring Boot
+* Kubernetes applications
+
+Example:
+
+```bash
+psql -U postgres
+```
+
+---
+
+## 10. MongoDB
+
+**Default Port:** `27017`
+
+NoSQL document database.
+
+### DevOps Relevance
+
+* MERN Stack
+* Cloud-native applications
+
+---
+
+## 11. Redis
+
+**Default Port:** `6379`
+
+High-speed in-memory database.
+
+### DevOps Relevance
+
+* Session storage
+* Caching
+* Message queues
+
+---
+
+## 12. Jenkins
+
+**Default Port:** `8080`
+
+Jenkins automates CI/CD pipelines.
+
+### DevOps Relevance
+
+* Build applications
+* Run automated tests
+* Deploy applications
+
+Example:
+
+```
+http://server-ip:8080
+```
+
+---
+
+## 13. Kubernetes API Server
+
+**Default Port:** `6443`
+
+The Kubernetes API server manages cluster resources.
+
+### DevOps Relevance
+
+* Create Pods
+* Deploy applications
+* Scale services
+
+Example:
+
+```bash
+kubectl get nodes
+```
+
+---
+
+# Why These Protocols Matter in DevOps
+
+| Activity              | Protocol Used      |
+| --------------------- | ------------------ |
+| Clone Git repository  | HTTPS, SSH         |
+| Login to Linux Server | SSH                |
+| Host Website          | HTTP, HTTPS        |
+| Deploy Application    | SSH, SFTP          |
+| Connect Database      | MySQL, PostgreSQL  |
+| Access Kubernetes     | HTTPS (API Server) |
+| DNS Resolution        | DNS                |
+| CI/CD Pipelines       | HTTP, HTTPS, SSH   |
+| Monitoring Alerts     | SMTP               |
+| Container Management  | Docker API         |
+
+---
+
+# Real-World DevOps Workflow
+
+Imagine deploying a web application on AWS:
+
+1. A developer pushes code to GitHub using **HTTPS** or **SSH**.
+2. **Jenkins** (Port 8080) detects the change and starts the CI/CD pipeline.
+3. Jenkins connects to an **EC2 instance** using **SSH (Port 22)**.
+4. The application connects to a **MySQL (Port 3306)** or **PostgreSQL (Port 5432)** database.
+5. Users access the application through **HTTPS (Port 443)**.
+6. **DNS (Port 53)** resolves the domain name to the server's IP address.
+7. Monitoring tools send email alerts using **SMTP (Port 587)** if any issue occurs.
+
+---
+
+# Conclusion
+
+Understanding network protocols and port numbers is a fundamental DevOps skill. Whether deploying applications, managing cloud infrastructure, configuring firewalls, or troubleshooting connectivity, knowing which protocol and port are used helps ensure systems communicate securely and efficiently.
+
+**Key takeaways:**
+
+* Use **SSH (22)** for secure remote server access.
+* Use **HTTP (80)** and **HTTPS (443)** to serve web applications.
+* Use **DNS (53)** to resolve domain names.
+* Use **MySQL (3306)** or **PostgreSQL (5432)** for database connections.
+* Use **Jenkins (8080)** for CI/CD automation.
+* Use **Kubernetes API (6443)** to manage Kubernetes clusters.
+
+This knowledge is essential for day-to-day DevOps tasks involving Linux servers, Docker, Kubernetes, AWS, CI/CD, and cloud networking.
