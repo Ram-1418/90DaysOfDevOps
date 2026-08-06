@@ -1,0 +1,118 @@
+
+
+---
+
+# Task 1: Understand OSI & TCP/IP Models
+
+## What is the OSI Model?
+
+The **OSI (Open Systems Interconnection)** model is a **7-layer conceptual framework** that explains how data travels from one computer to another over a network. Each layer performs a specific function and communicates with the layer above and below it.
+
+### OSI Model Layers
+
+| Layer No. | Layer Name   | Purpose                                                     | Real-World Example                            |
+| --------- | ------------ | ----------------------------------------------------------- | --------------------------------------------- |
+| 7         | Application  | Provides network services to applications                   | HTTP, HTTPS, FTP, SMTP, DNS                   |
+| 6         | Presentation | Data formatting, encryption, compression                    | SSL/TLS encryption, JPEG, PNG                 |
+| 5         | Session      | Establishes, manages, and terminates communication sessions | NetBIOS, RPC                                  |
+| 4         | Transport    | Reliable data delivery, error checking, flow control        | TCP, UDP                                      |
+| 3         | Network      | Routing packets between networks                            | IP, ICMP, Routers                             |
+| 2         | Data Link    | Transfers frames between devices on the same network        | Ethernet, Wi-Fi, MAC Address                  |
+| 1         | Physical     | Sends raw bits over the physical medium                     | Ethernet Cable, Fiber Optic, Wireless Signals |
+
+---
+
+## Real-World Example of the OSI Model
+
+Suppose you open **[https://github.com](https://github.com)** in your browser.
+
+| Layer        | What Happens                                                                   |
+| ------------ | ------------------------------------------------------------------------------ |
+| Application  | Browser sends an HTTPS request to GitHub.                                      |
+| Presentation | HTTPS encrypts the data using TLS.                                             |
+| Session      | Creates and manages the session between your computer and GitHub.              |
+| Transport    | TCP ensures all packets arrive correctly and in order.                         |
+| Network      | IP finds the best route to GitHub's server.                                    |
+| Data Link    | Ethernet or Wi-Fi transfers frames to your router.                             |
+| Physical     | Data travels as electrical, optical, or radio signals through cables or Wi-Fi. |
+
+---
+
+# What is the TCP/IP Model?
+
+The **TCP/IP (Transmission Control Protocol/Internet Protocol)** model is the practical networking model used on the Internet. It consists of **4 layers**.
+
+## TCP/IP Layers
+
+| Layer          | Purpose                           | Protocols                        |
+| -------------- | --------------------------------- | -------------------------------- |
+| Application    | Network services for applications | HTTP, HTTPS, FTP, SMTP, DNS, SSH |
+| Transport      | Reliable or fast communication    | TCP, UDP                         |
+| Internet       | Routing packets across networks   | IP, ICMP, ARP                    |
+| Network Access | Physical transmission of data     | Ethernet, Wi-Fi                  |
+
+---
+
+# Real-World Example of the TCP/IP Model
+
+When you visit **[https://github.com](https://github.com)**:
+
+| Layer          | What Happens                                                |
+| -------------- | ----------------------------------------------------------- |
+| Application    | Browser sends an HTTPS request.                             |
+| Transport      | TCP establishes a connection and ensures reliable delivery. |
+| Internet       | IP routes packets to GitHub's server.                       |
+| Network Access | Ethernet or Wi-Fi sends the data through the local network. |
+
+---
+
+# OSI vs TCP/IP
+
+| OSI Model                             | TCP/IP Model                   |
+| ------------------------------------- | ------------------------------ |
+| 7 Layers                              | 4 Layers                       |
+| Reference model                       | Practical implementation       |
+| Developed by ISO                      | Developed by DARPA             |
+| Used for learning and troubleshooting | Used on the Internet           |
+| More detailed                         | Simpler and widely implemented |
+
+---
+
+# Common Protocols by Layer
+
+| Protocol | OSI Layer          | TCP/IP Layer            | Purpose                              |
+| -------- | ------------------ | ----------------------- | ------------------------------------ |
+| HTTP     | Application        | Application             | Load websites                        |
+| HTTPS    | Application        | Application             | Secure websites                      |
+| FTP      | Application        | Application             | File transfer                        |
+| SMTP     | Application        | Application             | Send emails                          |
+| DNS      | Application        | Application             | Convert domain names to IP addresses |
+| SSH      | Application        | Application             | Secure remote login                  |
+| TCP      | Transport          | Transport               | Reliable communication               |
+| UDP      | Transport          | Transport               | Fast communication (video, gaming)   |
+| IP       | Network            | Internet                | Routing packets                      |
+| ICMP     | Network            | Internet                | Ping and diagnostics                 |
+| ARP      | Data Link          | Internet/Network Access | Resolve IP to MAC address            |
+| Ethernet | Data Link          | Network Access          | Wired LAN communication              |
+| Wi-Fi    | Physical/Data Link | Network Access          | Wireless communication               |
+
+---
+
+# Example: Opening GitHub in a Browser
+
+1. You type **[https://github.com](https://github.com)** into your browser.
+2. **DNS** converts `github.com` into an IP address.
+3. **TCP** establishes a reliable connection.
+4. **HTTPS (TLS)** encrypts the communication.
+5. **IP** routes packets across the Internet.
+6. **Ethernet/Wi-Fi** sends the packets over your local network.
+7. GitHub's server receives the request and sends the webpage back to your browser.
+
+---
+
+# Conclusion
+
+* The **OSI Model** is a **7-layer reference model** used to understand and troubleshoot networking concepts.
+* The **TCP/IP Model** is a **4-layer practical model** that powers the Internet.
+* Protocols such as **HTTP, HTTPS, TCP, UDP, IP, DNS, and Ethernet** work together across different layers to enable communication between devices.
+* Understanding these models is essential for networking, cloud computing, AWS, Linux administration, and DevOps.
